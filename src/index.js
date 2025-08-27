@@ -12,6 +12,7 @@ import dotenv from 'dotenv';
 // Import routes
 import customerRoutes from './routes/customers.js';
 import authRoutes from './routes/auth.js';
+import signupRoutes from './routes/signup.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -85,6 +86,7 @@ app.use((req, res, next) => {
 // API Routes
 app.use('/api/customers', customerRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api', signupRoutes);
 
 // Root endpoint
 app.get('/', (req, res) => {
